@@ -19,16 +19,27 @@
 			</tr>
 		</thead>
 		<tbody>
+			<c:set var="total" value="0" />
 			<c:forEach var="info" items="${simpleInfo}">
 				<tr>
 					<td><c:out value="${info.getYear()}"></c:out></td>
 					<td><c:out value="${info.getSemester()}"></c:out></td>
 					<td><c:out value="${info.getCredit_sum()}"></c:out></td>
+					<c:set var="total" value="${total+ info.getCredit_sum()}" />
 					<td><c:out value="링크"></c:out></td>
 				</tr>
 			</c:forEach>
-
 		</tbody>
+		<tfoot>
+			<tr>
+				<th>총계</th>
+				<th>-</th>
+				<th>
+					<c:out value="${total}"></c:out>			
+				</th>
+				<th>-</th>
+			</tr>
+		</tfoot>
 	</table>
 
 

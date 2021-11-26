@@ -19,4 +19,5 @@ public class Info {
 	private String professor;
 	private int credit;
 	private int credit_sum;
+	private int credit_totalAmount = 0;
 }

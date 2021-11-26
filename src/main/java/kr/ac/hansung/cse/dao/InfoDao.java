@@ -51,6 +51,8 @@ public class InfoDao {
 				info.setYear(rs.getInt("year"));
 				info.setSemester(rs.getInt("semester"));
 				info.setCredit_sum(rs.getInt("sum(credit)"));
+				info.setCredit_totalAmount(info.getCredit_totalAmount() + info.getCredit_sum());
+				
 				return info;
 			}
 		});
