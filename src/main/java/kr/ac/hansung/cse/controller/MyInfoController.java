@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class MyInfoController {
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/myInfo", method = RequestMethod.GET)
 	public String myInfo() {
 		
 		return "myInfo";
