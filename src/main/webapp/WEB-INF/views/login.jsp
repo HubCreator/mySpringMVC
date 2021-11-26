@@ -14,9 +14,9 @@
 	href="${pageContext.request.contextPath}/resources/css/main.css">
 </head>
 <body>
-	<div class="container">
+	<div class="form-container">
 		<form class="form" method="post" action="<c:url value="login"/>">
-			<h2 class="form-signin-heading">Please sign in</h2>
+			<h2 class="form__title">Please sign in</h2>
 
 			<c:if test="${not empty errorMsg}">
 				<div style="color: #ff0000">
@@ -29,19 +29,18 @@
 					<h4>${logoutMsg}</h4>
 				</div>
 			</c:if>
-			<p class="form__content, username">
-				<label for="username" class="sr-only">Username</label> <input
-					type="text" id="username" name="username" class="form-control"
-					placeholder="Username" required autofocus>
+			<p class="form__content">
+				<label for="username" class="form__content__label">Username</label> 
+				<input
+					type="text" id="username" name="username" placeholder="Username" required autofocus>
 			</p>
-			<p class="form__content, password">
-				<label for="password" class="sr-only">Password</label> 
+			<p class="form__content">
+				<label for="password" class="form__content__label">Password</label> 
 					<input
-					type="password" id="password" name="password" class="form-control"
-					placeholder="Password" required>
+					type="password" id="password" name="password" placeholder="Password" required>
 			</p>
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-			<button class="form__content submit" type="submit">Sign	in</button>
+			<button class="form__content" id="submit" type="submit">Sign in</button>
 		</form>
 	</div>
 </body>

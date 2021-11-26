@@ -11,4 +11,6 @@ public class MyInfoController {
 		
 		return "myInfo";
 	}
+	
+	
 }
