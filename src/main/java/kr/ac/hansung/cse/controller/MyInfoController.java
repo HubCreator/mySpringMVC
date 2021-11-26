@@ -17,10 +17,8 @@ public class MyInfoController {
 	
 	@RequestMapping("/myInfo")
 	public String showInfo(Model model) {
-//		List<Info> simpleInfo = infoService.getSimpleInfo();
-		List<Info> detailInfo = infoService.getDetailInfo();
-//		model.addAttribute("simpleInfo", simpleInfo);
-		model.addAttribute("detailInfo", detailInfo);
+		List<Info> simpleInfo = infoService.getSimpleInfo();
+		model.addAttribute("simpleInfo", simpleInfo);
 		
 		return "myInfo";
 	}

@@ -13,29 +13,13 @@ import org.springframework.stereotype.Repository;
 
 import kr.ac.hansung.cse.model.Info;
 
-@Repository("offerDao")
+@Repository("infoDao")
 public class InfoDao {
 	private JdbcTemplate jdbcTemplate;
 
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
-	}
-	
-	public List<Info> getSimpleInfo() {
-		String SQL = "select year, semester, credit from collegeinfo";
-		return jdbcTemplate.query(SQL, new RowMapper<Info>() {
-
-			@Override
-			public Info mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Info info = new Info();
-//				info.setId(rs.getInt("id"));
-				info.setYear(rs.getInt("year"));
-				info.setSemester(rs.getInt("semester"));
-				info.setCredit(rs.getInt("credit"));
-				return info;
-			}
-		});
 	}
 	
 	public List<Info> getDetailInfo() {
@@ -46,13 +30,27 @@ public class InfoDao {
 			@Override
 			public Info mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Info info = new Info();
-//				info.setId(rs.getInt("id"));
 				info.setYear(rs.getInt("year"));
 				info.setSemester(rs.getInt("semester"));
 				info.setSubject_name(rs.getString("subject_name"));
 				info.setCategory(rs.getString("category"));
 				info.setProfessor(rs.getString("professor"));
 				info.setCredit(rs.getInt("credit"));
+				return info;
+			}
+		});
+	}
+	
+	public List<Info> getSimpleInfo() {
+		String SQL = "select year, semester, sum(credit) from collegeinfo group by year, semester";
+		return jdbcTemplate.query(SQL, new RowMapper<Info>() {
+
+			@Override
+			public Info mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Info info = new Info();
+				info.setYear(rs.getInt("year"));
+				info.setSemester(rs.getInt("semester"));
+				info.setCredit_sum(rs.getInt("sum(credit)"));
 				return info;
 			}
 		});

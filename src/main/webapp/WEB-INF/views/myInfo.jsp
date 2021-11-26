@@ -9,11 +9,28 @@
 </head>
 <body>
 	<h3>hello!</h3>
-	<c:forEach var="info" items="${detailInfo}">
-		<p>
-			<c:out value="${info}"></c:out>
-		</p>
-	</c:forEach>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>년도</th>
+				<th>학기</th>
+				<th>취득 학점</th>
+				<th>상세보기</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="info" items="${simpleInfo}">
+				<tr>
+					<td><c:out value="${info.getYear()}"></c:out></td>
+					<td><c:out value="${info.getSemester()}"></c:out></td>
+					<td><c:out value="${info.getCredit_sum()}"></c:out></td>
+					<td><c:out value="링크"></c:out></td>
+				</tr>
+			</c:forEach>
+
+		</tbody>
+	</table>
+
 
 </body>
 </html>
