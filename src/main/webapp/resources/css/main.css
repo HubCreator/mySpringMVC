@@ -1,0 +1,63 @@
+html, body {
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.outerBox {
+	border: 2px solid black;
+	width: 40%;
+	diplay : flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15rem;
+	padding: 3rem;
+}
+
+h1 {
+	width: 100%;
+	text-align: center;
+	font-size: 3rem;
+	color: skyblue;
+	margin-bottom: 2rem;
+}
+
+#introduce {
+	font-size: 1.5rem; 
+	diplay : flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+
+#goToMyInfo {
+	width: 100%;
+	diplay:block;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.5rem;
+	color: white;
+	font-weight: 600;
+	width: 2rem;
+	height: 1.7rem;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 0.6rem;
+	
+}
