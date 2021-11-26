@@ -11,8 +11,7 @@ import lombok.ToString;
 @ToString // 객체 내의 값들을 toString 메서드로 호출해줌
 public class Info {
 
-	private int id;
-	
+//	private int id;
 	private int year;
 	private int semester;
 	private String subject_code;

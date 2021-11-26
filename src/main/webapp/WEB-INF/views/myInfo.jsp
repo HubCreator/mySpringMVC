@@ -9,5 +9,11 @@
 </head>
 <body>
 	<h3>hello!</h3>
+	<c:forEach var="info" items="${detailInfo}">
+		<p>
+			<c:out value="${info}"></c:out>
+		</p>
+	</c:forEach>
+
 </body>
 </html>

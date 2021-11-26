@@ -23,33 +23,37 @@ public class InfoDao {
 	}
 	
 	public List<Info> getSimpleInfo() {
-		String SQL = "select * from offers";
+		String SQL = "select year, semester, credit from collegeinfo";
 		return jdbcTemplate.query(SQL, new RowMapper<Info>() {
 
 			@Override
 			public Info mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Info offer = new Info();
-				offer.setId(rs.getInt("id"));
-				offer.setName(rs.getString("name"));
-				offer.setEmail(rs.getString("email"));
-				offer.setText(rs.getString("text"));
-				return offer;
+				Info info = new Info();
+//				info.setId(rs.getInt("id"));
+				info.setYear(rs.getInt("year"));
+				info.setSemester(rs.getInt("semester"));
+				info.setCredit(rs.getInt("credit"));
+				return info;
 			}
 		});
 	}
 	
 	public List<Info> getDetailInfo() {
-		String SQL = "select * from offers";
+		String SQL = "select year, semester, subject_name, category, "
+				+ "professor, credit from collegeinfo";
 		return jdbcTemplate.query(SQL, new RowMapper<Info>() {
 
 			@Override
 			public Info mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Info offer = new Info();
-				offer.setId(rs.getInt("id"));
-				offer.setName(rs.getString("name"));
-				offer.setEmail(rs.getString("email"));
-				offer.setText(rs.getString("text"));
-				return offer;
+				Info info = new Info();
+//				info.setId(rs.getInt("id"));
+				info.setYear(rs.getInt("year"));
+				info.setSemester(rs.getInt("semester"));
+				info.setSubject_name(rs.getString("subject_name"));
+				info.setCategory(rs.getString("category"));
+				info.setProfessor(rs.getString("professor"));
+				info.setCredit(rs.getInt("credit"));
+				return info;
 			}
 		});
 	}
