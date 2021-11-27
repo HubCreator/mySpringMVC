@@ -21,4 +21,8 @@ public class InfoService {
 	public List<Info> getDetailInfo(String year, String semester) {
 		return infoDao.getDetailInfo(year, semester);
 	}
+	
+	public void insert(Info info) {
+		infoDao.insert(info);
+	}
 }

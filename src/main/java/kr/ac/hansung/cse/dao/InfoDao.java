@@ -41,10 +41,8 @@ public class InfoDao {
 	}
 
 	public List<Info> getDetailInfo(String year, String semester) {
-		String SQL = "select year, semester, subject_name, category, professor, credit " 
-					+ "from collegeinfo "
-					+ "where year=? and semester=?" 
-					+ "order by subject_name";
+		String SQL = "select year, semester, subject_name, category, professor, credit " + "from collegeinfo "
+				+ "where year=? and semester=?" + "order by subject_name";
 		return jdbcTemplate.query(SQL, new RowMapper<Info>() {
 
 			@Override
@@ -61,4 +59,18 @@ public class InfoDao {
 		}, new Object[] { year, semester });
 	}
 
+	// Crud method
+	public boolean insert(Info info) {
+		int year = info.getYear();
+		int semester = info.getSemester();
+		String subject_code = info.getSubject_code();
+		String subject_name = info.getSubject_name();
+		String category = info.getCategory();
+		String professor = info.getProfessor();
+		int credit = info.getCredit();
+		
+
+		String SQL = "insert into collegeinfo (year, semester, subject_code, subject_name, category, professor, credit) value (?, ?, ?, ?, ?, ?, ?)";
+		return (jdbcTemplate.update(SQL, new Object[] { year, semester, subject_code, subject_name, category, professor, credit }) == 1);
+	}
 }

@@ -2,9 +2,13 @@ package kr.ac.hansung.cse.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -40,4 +44,28 @@ public class MyInfoController {
 		return "detailInfo";
 	}
 	
+	@RequestMapping("/signUpClass")
+	public String signUpClass(Model model) {
+		model.addAttribute("class", new Info()); // web form에서 초기 비어있는 버퍼링 객체를 만들기 위해
+		
+		return "signUpClass";
+	}
+	
+	@RequestMapping("/docreate")
+	public String doCreate(Model model, @Valid Info info, BindingResult result) {
+		if(result.hasErrors()) {
+			System.out.println("=== Form data does not validated ===");
+			List<ObjectError> errors = result.getAllErrors();
+			
+			for(ObjectError error:errors) {
+				System.out.println(error.getDefaultMessage());
+			}
+			
+			return "signUpClass";
+		}
+		
+		//System.out.println(offer);
+		infoService.insert(info); // Controller -> Service -> DAO
+		return "classCreated";
+	}
 }
