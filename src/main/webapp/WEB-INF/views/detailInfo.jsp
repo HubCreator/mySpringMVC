@@ -26,7 +26,7 @@
 				<tr>
 					<td><c:out value="${info.getYear()}"></c:out></td>
 					<td><c:out value="${info.getSemester()}"></c:out></td>
-					<td><c:out value="${info.getSubject_name()}"></c:out></td>
+					<td id="subject_name"><c:out value="${info.getSubject_name()}"></c:out></td>
 					<td><c:out value="${info.getCategory()}"></c:out></td>
 					<td><c:out value="${info.getProfessor()}"></c:out></td>
 					<td><c:out value="${info.getCredit()}"></c:out></td>

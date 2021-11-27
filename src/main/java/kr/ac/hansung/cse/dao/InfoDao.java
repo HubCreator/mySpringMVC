@@ -41,8 +41,10 @@ public class InfoDao {
 	}
 
 	public List<Info> getDetailInfo(String year, String semester) {
-		String SQL = "select year, semester, subject_name, category, professor, credit " + "from collegeinfo "
-				+ "where year=? and semester=?" + "order by subject_name";
+		String SQL = "select year, semester, subject_name, category, professor, credit " 
+					+ "from collegeinfo "
+					+ "where year=? and semester=?" 
+					+ "order by subject_name";
 		return jdbcTemplate.query(SQL, new RowMapper<Info>() {
 
 			@Override

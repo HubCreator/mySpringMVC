@@ -13,9 +13,11 @@ td, th {
 	text-align: left;
 	padding: 10px;
 	height: 20px;
-	width: 100px;
+	width: 15em;
 }
-
+#subject_name {
+	width: 30em;
+}
 .table__head th, .table__body td, .table__foot th {
 	border-bottom: 1px solid gray;
 }
