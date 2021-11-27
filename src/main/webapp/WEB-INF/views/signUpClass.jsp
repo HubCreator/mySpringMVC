@@ -8,17 +8,17 @@
 	href="${pageContext.request.contextPath}/resources/css/main.css">
 </head>
 <body>
-	<sf:form method="post" action="${pageContext.request.contextPath}/docreate" modelAttribute="info">
+	<sf:form method="post" action="${pageContext.request.contextPath}/docreate" modelAttribute="class">
 		<table class="formtable">
 			<tr>
 				<td class="label"> 
-					Year: </td> <td><sf:input class="control" type="int" path="year"/><br>
+					Year: </td> <td><sf:input class="control" type="text" path="year"/><br>
 					<sf:errors class="error" path="year" />	
 				</td> 
 			</tr>
 			<tr>
 				<td class="label"> 
-					Semester: </td> <td><sf:input class="control" type="int" path="semester"/><br>
+					Semester: </td> <td><sf:input class="control" type="text" path="semester"/><br>
 					<sf:errors class="error" path="semester" />		
 				</td>
 			</tr>
