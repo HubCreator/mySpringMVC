@@ -16,6 +16,12 @@ public class MyInfoController {
 	@Autowired
 	private InfoService infoService; // service 로직과 연관관계를 맺음
 	
+	@RequestMapping("/infoMenu")
+	public String showInfoMenu(Model model) {
+		
+		return "infoMenu";
+	}
+	
 	@RequestMapping("/myInfo")
 	public String showInfo(Model model) {
 		List<Info> simpleInfo = infoService.getSimpleInfo();

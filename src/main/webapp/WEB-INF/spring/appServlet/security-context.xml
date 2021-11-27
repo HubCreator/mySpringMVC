@@ -19,6 +19,7 @@
 
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/" access="permitAll" />
+		<intercept-url pattern="/infoMenu" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/myInfo" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/login" access="permitAll" />
 		<form-login login-page="/login"
