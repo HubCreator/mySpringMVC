@@ -22,6 +22,27 @@ public class InfoDao {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
+	
+	public List<Info> getSimpleInfo() {
+		String SQL = "select year, semester, sum(credit) "
+				+ "from collegeinfo "
+				+ "group by year, semester "
+				+ "order by year, semester";
+		return jdbcTemplate.query(SQL, new RowMapper<Info>() {
+
+			@Override
+			public Info mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Info info = new Info();
+				info.setYear(rs.getInt("year"));
+				info.setSemester(rs.getInt("semester"));
+				info.setCredit_sum(rs.getInt("sum(credit)"));
+				info.setCredit_totalAmount(info.getCredit_totalAmount() + info.getCredit_sum());
+				
+				return info;
+			}
+		});
+	}
+	
 	public List<Info> getDetailInfo() {
 		String SQL = "select year, semester, subject_name, category, "
 				+ "professor, credit from collegeinfo";
@@ -36,23 +57,6 @@ public class InfoDao {
 				info.setCategory(rs.getString("category"));
 				info.setProfessor(rs.getString("professor"));
 				info.setCredit(rs.getInt("credit"));
-				return info;
-			}
-		});
-	}
-	
-	public List<Info> getSimpleInfo() {
-		String SQL = "select year, semester, sum(credit) from collegeinfo group by year, semester";
-		return jdbcTemplate.query(SQL, new RowMapper<Info>() {
-
-			@Override
-			public Info mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Info info = new Info();
-				info.setYear(rs.getInt("year"));
-				info.setSemester(rs.getInt("semester"));
-				info.setCredit_sum(rs.getInt("sum(credit)"));
-				info.setCredit_totalAmount(info.getCredit_totalAmount() + info.getCredit_sum());
-				
 				return info;
 			}
 		});

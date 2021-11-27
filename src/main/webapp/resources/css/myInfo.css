@@ -1,0 +1,26 @@
+.table {
+	diplay: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5rem;
+	width: 50%;
+	border-collapse: collapse;  
+}
+
+td, th {
+	text-align: left;
+	padding: 10px;
+	height: 20px;
+	width: 100px;
+}
+
+.table__head th, .table__body td, .table__foot th {
+	border-bottom: 1px solid gray;
+}
+.table__head {
+	background-color: darkgray;
+	color: yellow;
+}
+

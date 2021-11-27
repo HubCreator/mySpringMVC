@@ -1,3 +1,9 @@
+/* @import "../css/myInfo.css"; */
+
+@import "../css/home.css";
+@import "../css/login.css";
+@import "../css/myInfo.css";
+
 html, body {
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -8,110 +14,10 @@ a {
   text-decoration: none;
 }
 
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   list-style: none;
-}
-
-.outerBox {
-	border: 1px solid black;
-	width: 40%;
-	diplay : flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: row;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 15rem;
-	padding: 3rem;
-}
-
-h1 {
-	width: 100%;
-	text-align: center;
-	font-size: 3rem;
-	color: skyblue;
-	margin-bottom: 2rem;
-}
-
-#introduce {
-	font-size: 1.5rem; 
-	diplay : flex;
-	justify-content: center;
-	align-items: center;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 1rem;
-	margin-bottom: 2rem;
-}
-
-#goToMyInfo {
-	width: 100%;
-	diplay:block;
-	margin-left: auto;
-	margin-right: auto;
-	font-size: 1.5rem;
-	color: white;
-	font-weight: 600;
-	width: 2rem;
-	height: 1.7rem;
-	background-color: rgba(0, 0, 0, 0.4);
-	padding: 0.6rem;
-	border-radius: 5px;
-}
-
-#goToMyInfo:hover {
-	background-color: tomato;
-}
-
-.form-container {
-	border: 2px solid black;
-	width: 40%;
-	diplay : flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 15rem;
-	padding: 2rem;
-}
-
-.form__title {
-	color: skyblue;
-	font-size: 3rem;
-}
-
-.form__content {
-	font-size: 2rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	margin-bottom: 1rem;
-	width: 100%;
-}
-.form__content__label {
-	margin-right: auto;
-	margin-left: 2rem;
-	margin-bottom: 0.2rem;
-	font-weight: 600;
-}
-.form__content #password, .form__content #username {
-	width: 60%;
-	font-size: 1.7rem;
-	font-color: skyblue;
-	margin-right: auto;
-	margin-left: 2rem;
-}
-
-.form__content#submit {
-	width: 20%;
-	margin-left: auto;
-}
-
-.form__content#submit:hover {
-	background-color: tomato;
 }
