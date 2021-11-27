@@ -18,7 +18,7 @@ public class InfoService {
 		return infoDao.getSimpleInfo();
 	}
 	
-	public List<Info> getDetailInfo() {
-		return infoDao.getDetailInfo();
+	public List<Info> getDetailInfo(String year, String semester) {
+		return infoDao.getDetailInfo(year, semester);
 	}
 }

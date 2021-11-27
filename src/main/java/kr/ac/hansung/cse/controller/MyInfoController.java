@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ac.hansung.cse.model.Info;
 import kr.ac.hansung.cse.service.InfoService;
@@ -23,5 +24,14 @@ public class MyInfoController {
 		return "myInfo";
 	}
 	
+	@RequestMapping("/detailInfo")
+	public String showDetailInfo(Model model, 
+			@RequestParam String year, 
+			@RequestParam String semester) {
+		List<Info> detailInfo = infoService.getDetailInfo(year, semester);
+		model.addAttribute("detailInfo", detailInfo);
+		
+		return "detailInfo";
+	}
 	
 }

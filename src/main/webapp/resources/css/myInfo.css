@@ -24,3 +24,12 @@ td, th {
 	color: yellow;
 }
 
+.title {
+	color: skyblue;
+	font-size: 2rem;
+	diplay:flex;
+	width:100%;
+	text-align: center;
+	padding: 0.5rem;
+	margin-top: 3rem;
+}

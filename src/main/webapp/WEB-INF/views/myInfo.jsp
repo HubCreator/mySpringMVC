@@ -8,7 +8,7 @@
 	href="${pageContext.request.contextPath}/resources/css/main.css">
 </head>
 <body>
-	<h3>내 학사정보</h3>
+	<h3 class="title">내 학사정보</h3>
 	<table class="table">
 		<thead class="table__head">
 			<tr>

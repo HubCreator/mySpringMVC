@@ -21,12 +21,9 @@ public class InfoDao {
 	public void setDataSource(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
-	
-	
+
 	public List<Info> getSimpleInfo() {
-		String SQL = "select year, semester, sum(credit) "
-				+ "from collegeinfo "
-				+ "group by year, semester "
+		String SQL = "select year, semester, sum(credit) " + "from collegeinfo " + "group by year, semester "
 				+ "order by year, semester";
 		return jdbcTemplate.query(SQL, new RowMapper<Info>() {
 
@@ -37,15 +34,15 @@ public class InfoDao {
 				info.setSemester(rs.getInt("semester"));
 				info.setCredit_sum(rs.getInt("sum(credit)"));
 				info.setCredit_totalAmount(info.getCredit_totalAmount() + info.getCredit_sum());
-				
+
 				return info;
 			}
 		});
 	}
-	
-	public List<Info> getDetailInfo() {
-		String SQL = "select year, semester, subject_name, category, "
-				+ "professor, credit from collegeinfo";
+
+	public List<Info> getDetailInfo(String year, String semester) {
+		String SQL = "select year, semester, subject_name, category, professor, credit " + "from collegeinfo "
+				+ "where year=? and semester=?" + "order by subject_name";
 		return jdbcTemplate.query(SQL, new RowMapper<Info>() {
 
 			@Override
@@ -59,7 +56,7 @@ public class InfoDao {
 				info.setCredit(rs.getInt("credit"));
 				return info;
 			}
-		});
+		}, new Object[] { year, semester });
 	}
 
 }
