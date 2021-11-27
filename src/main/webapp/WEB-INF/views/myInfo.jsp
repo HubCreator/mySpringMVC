@@ -9,8 +9,8 @@
 </head>
 <body>
 	<h3 class="title">내 학사정보</h3>
-	<table class="table">
-		<thead class="table__head">
+	<table class="myInfoTable">
+		<thead class="myInfoTable__head">
 			<tr>
 				<th>년도</th>
 				<th>학기</th>
@@ -18,7 +18,7 @@
 				<th>상세보기</th>
 			</tr>
 		</thead>
-		<tbody class="table__body">
+		<tbody class="myInfoTable__body">
 			<c:set var="total" value="0" />
 			<c:forEach var="info" items="${simpleInfo}">
 				<tr>
@@ -34,7 +34,7 @@
 				</tr>
 			</c:forEach>
 		</tbody>
-		<tfoot class="table__foot">
+		<tfoot class="myInfoTable__foot">
 			<tr>
 				<th>총계</th>
 				<th>-</th>

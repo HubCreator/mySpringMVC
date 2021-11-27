@@ -1,4 +1,4 @@
-.table {
+.myInfoTable {
 	diplay: flex;
 	justify-content: center;
 	align-items: center;
@@ -9,29 +9,20 @@
 	border-collapse: collapse;  
 }
 
-td, th {
+.myInfoTable td, .myInfoTable th {
 	text-align: left;
 	padding: 10px;
 	height: 20px;
 	width: 15em;
 }
-#subject_name {
+.myInfoTable #subject_name {
 	width: 30em;
 }
-.table__head th, .table__body td, .table__foot th {
+.myInfoTable__head th, .myInfoTable__body td, .myInfoTable__foot th {
 	border-bottom: 1px solid gray;
 }
-.table__head {
+.myInfoTable__head {
 	background-color: darkgray;
 	color: yellow;
 }
 
-.title {
-	color: skyblue;
-	font-size: 2rem;
-	diplay:flex;
-	width:100%;
-	text-align: center;
-	padding: 0.5rem;
-	margin-top: 3rem;
-}

@@ -14,10 +14,8 @@ import lombok.ToString;
 @ToString // 객체 내의 값들을 toString 메서드로 호출해줌
 public class Info {
 
-	@NotEmpty
 	private int year;
 	
-	@NotEmpty
 	private int semester;
 	
 	private String subject_code;
@@ -34,7 +32,6 @@ public class Info {
 	@Size(min=3, max=10, message = "Professor's name should be between 3 and 10 characters")
 	private String professor;
 	
-	@NotEmpty
 	private int credit;
 	
 	private int credit_sum;

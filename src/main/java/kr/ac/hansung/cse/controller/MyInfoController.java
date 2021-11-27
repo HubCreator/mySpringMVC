@@ -64,7 +64,6 @@ public class MyInfoController {
 			return "signUpClass";
 		}
 		
-		//System.out.println(offer);
 		infoService.insert(info); // Controller -> Service -> DAO
 		return "classCreated";
 	}

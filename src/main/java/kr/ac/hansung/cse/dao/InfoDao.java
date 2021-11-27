@@ -70,7 +70,8 @@ public class InfoDao {
 		int credit = info.getCredit();
 		
 
-		String SQL = "insert into collegeinfo (year, semester, subject_code, subject_name, category, professor, credit) value (?, ?, ?, ?, ?, ?, ?)";
+		String SQL = "insert into collegeinfo (year, semester, subject_code, subject_name, category, professor, credit) "
+				+ "value (?, ?, ?, ?, ?, ?, ?)";
 		return (jdbcTemplate.update(SQL, new Object[] { year, semester, subject_code, subject_name, category, professor, credit }) == 1);
 	}
 }
