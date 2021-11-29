@@ -25,4 +25,8 @@ public class InfoService {
 	public void insert(Info info) {
 		infoDao.insert(info);
 	}
+	
+	public List<Info> getSignedUpClasses() {
+		return infoDao.getSignedUpClasses();
+	}
 }

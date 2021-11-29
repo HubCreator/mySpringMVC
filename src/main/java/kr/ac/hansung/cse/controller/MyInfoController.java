@@ -67,4 +67,13 @@ public class MyInfoController {
 		infoService.insert(info); // Controller -> Service -> DAO
 		return "classCreated";
 	}
+	
+	@RequestMapping("/mySignedUpClasses")
+	public String showMySignedUpClasses(Model model) {
+		List<Info> signedUpClasses = infoService.getSignedUpClasses();
+		model.addAttribute("signedUpClasses", signedUpClasses);
+		
+		return "signedUpClasses";
+	}	
+	
 }

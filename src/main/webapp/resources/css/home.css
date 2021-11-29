@@ -1,7 +1,6 @@
 .outerBox {
-	border: 1px solid black;
 	width: 40%;
-	diplay : flex;
+	diplay: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
@@ -9,6 +8,7 @@
 	margin-right: auto;
 	margin-top: 15rem;
 	padding: 3rem;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .outerBox h1 {
@@ -20,8 +20,8 @@
 }
 
 #introduce {
-	font-size: 1.5rem; 
-	diplay : flex;
+	font-size: 1.5rem;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-left: auto;
@@ -31,20 +31,28 @@
 }
 
 #goToMyInfo {
-	width: 100%;
-	diplay:block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin-left: auto;
-	margin-right: auto;
 	font-size: 1.5rem;
 	color: white;
 	font-weight: 600;
-	width: 2rem;
-	height: 1.7rem;
+	width: 11rem;
+	height: 2.5rem;
 	background-color: rgba(0, 0, 0, 0.4);
 	padding: 0.6rem;
 	border-radius: 5px;
+	font-size: 1.5rem;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 #goToMyInfo:hover {
 	background-color: tomato;
+}
+
+.error {
+	font-size: small;
+	color: tomato;
+	margin-left: 10px;
 }

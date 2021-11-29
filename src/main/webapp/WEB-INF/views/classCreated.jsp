@@ -11,8 +11,8 @@
 </head>
 <body>
 	<h2 class="title">제출이 완료되었습니다.</h2>
-	<table class="table">
-		<thead class="table__head">
+	<table class="myInfoTable">
+		<thead class="myInfoTable__head">
 			<tr>
 				<th>년도</th>
 				<th>학기</th>
@@ -22,7 +22,7 @@
 				<th>학점</th>
 			</tr>
 		</thead>
-		<tbody class="table__body">
+		<tbody class="myInfoTable__body">
 			<tr>
 				<td><c:out value="${info.getYear()}"></c:out></td>
 				<td><c:out value="${info.getSemester()}"></c:out></td>

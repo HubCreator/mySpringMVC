@@ -1,8 +1,7 @@
-
 .form-container {
-	border: 2px solid black;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 	width: 40%;
-	diplay : flex;
+	diplay: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
@@ -26,12 +25,14 @@
 	margin-bottom: 1rem;
 	width: 100%;
 }
+
 .form__content__label {
 	margin-right: auto;
 	margin-left: 2rem;
 	margin-bottom: 0.2rem;
 	font-weight: 600;
 }
+
 .form__content #password, .form__content #username {
 	width: 60%;
 	font-size: 1.7rem;
@@ -41,8 +42,20 @@
 }
 
 .form__content#submit {
-	width: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin-left: auto;
+	font-size: 1.5rem;
+	color: white;
+	font-weight: 600;
+	width: 8rem;
+	height: 2.5rem;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 0.6rem;
+	border-radius: 5px;
+	font-size: 1.5rem;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .form__content#submit:hover {

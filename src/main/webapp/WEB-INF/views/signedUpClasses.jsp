@@ -1,14 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <html>
 <head>
-<title>My Detail Info</title>
-<link rel="stylesheet" type="text/css"
+<meta charset="UTF-8">
+<title>My Signed Up Classes</title>
+<link rel="stylesheet" type="text/css" 
 	href="${pageContext.request.contextPath}/resources/css/main.css">
 </head>
 <body>
-	<h3 class="title">상세정보</h3>
+	<h2 class="title">2022년 수강신청 조회</h2>
 	<table class="myInfoTable">
 		<thead class="myInfoTable__head">
 			<tr>
@@ -21,8 +23,7 @@
 			</tr>
 		</thead>
 		<tbody class="myInfoTable__body">
-			<c:set var="total" value="0" />
-			<c:forEach var="info" items="${detailInfo}">
+			<c:forEach var="info" items="${signedUpClasses}">
 				<tr>
 					<td><c:out value="${info.getYear()}"></c:out></td>
 					<td><c:out value="${info.getSemester()}"></c:out></td>

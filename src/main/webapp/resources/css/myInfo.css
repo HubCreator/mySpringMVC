@@ -6,7 +6,8 @@
 	margin-right: auto;
 	margin-top: 5rem;
 	width: 50%;
-	border-collapse: collapse;  
+	border-collapse: collapse;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .myInfoTable td, .myInfoTable th {
@@ -15,14 +16,16 @@
 	height: 20px;
 	width: 15em;
 }
+
 .myInfoTable #subject_name {
 	width: 30em;
 }
+
 .myInfoTable__head th, .myInfoTable__body td, .myInfoTable__foot th {
 	border-bottom: 1px solid gray;
 }
+
 .myInfoTable__head {
 	background-color: darkgray;
 	color: yellow;
 }
-

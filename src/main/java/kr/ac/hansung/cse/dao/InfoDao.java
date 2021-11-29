@@ -74,4 +74,24 @@ public class InfoDao {
 				+ "value (?, ?, ?, ?, ?, ?, ?)";
 		return (jdbcTemplate.update(SQL, new Object[] { year, semester, subject_code, subject_name, category, professor, credit }) == 1);
 	}
+	
+	public List<Info> getSignedUpClasses() {
+		String SQL = "select year, semester, subject_name, category, professor, credit "
+				+ "from nextclass " 
+				+ "order by year, semester, subject_name";
+		return jdbcTemplate.query(SQL, new RowMapper<Info>() {
+
+			@Override
+			public Info mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Info info = new Info();
+				info.setYear(rs.getInt("year"));
+				info.setSemester(rs.getInt("semester"));
+				info.setSubject_name(rs.getString("subject_name"));
+				info.setCategory(rs.getString("category"));
+				info.setProfessor(rs.getString("professor"));
+				info.setCredit(rs.getInt("credit"));
+				return info;
+			}
+		});
+	}
 }

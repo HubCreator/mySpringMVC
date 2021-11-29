@@ -14,8 +14,8 @@
 		<table class="signUpform">
 			<tr class="formtable__row">
 				<td class="formtable__row__label">연도 </td>
-				<td class="formtable__row__content"><sf:input class="control1" type="text" path="year"/><br>
 					<sf:errors class="error" path="year" />	
+				<td class="formtable__row__content"><sf:input class="control1" type="text" path="year"/><br>
 				</td> 
 			</tr>
 			<tr class="formtable__row">
